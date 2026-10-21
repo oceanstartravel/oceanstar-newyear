@@ -426,19 +426,19 @@
     .back-to-top {
       position: fixed;
       right: 22px;
-      bottom: 24px;
-      z-index: 120;
+      bottom: 76px;
+      z-index: 125;
       display: flex;
       width: 54px;
       height: 54px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid #e2d5c4;
+      border: 0;
       border-radius: 50%;
-      color: var(--red);
-      background: rgba(255,255,255,.96);
-      box-shadow: 0 3px 12px rgba(0,0,0,.13);
+      color: #fff;
+      background: #168acb;
+      box-shadow: 0 3px 12px rgba(0,0,0,.18);
       font-size: 22px;
       font-weight: 800;
       line-height: 1;
@@ -454,23 +454,107 @@
 
     .back-to-top:hover {
       transform: translateY(-3px);
-      color: #fff;
-      background: var(--red);
+      background: #0873b3;
     }
 
-    footer {
-      padding: 22px 16px;
-      text-align: center;
-      color: #d9e3ec;
-      background: #17374e;
+    .site-footer {
+      padding: 0;
+      color: #24313d;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      max-width: 1540px;
+      margin: 0 auto;
+      padding: 42px 24px 48px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      background: #fff;
+    }
+
+    .footer-column h2 {
+      margin: 0 0 12px;
+      padding: 0 0 9px;
+      border-bottom: 3px solid #2ba7e8;
+      color: #1f2d3a;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .footer-column ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: 1px solid #e1e1e1;
+    }
+
+    .footer-column li {
+      padding: 8px 12px;
+      border-bottom: 1px dotted #d8d8d8;
+      color: #485565;
+      line-height: 1.55;
+    }
+
+    .footer-column li:last-child { border-bottom: 0; }
+    .footer-column a { color: #485565; text-decoration: none; }
+    .footer-column a:hover { color: #168acb; text-decoration: underline; }
+
+    .footer-company {
+      color: #f5f5f5;
+      background: #383838;
+    }
+
+    .footer-company-inner {
+      max-width: 1540px;
+      margin: 0 auto;
+      padding: 28px 24px 62px;
       font-size: 13px;
+      line-height: 1.85;
+      overflow-wrap: anywhere;
     }
 
-    footer a { color: #fff; }
-
-    .mobile-bottom {
-      display: none;
+    .footer-company h2 {
+      margin: 0 0 5px;
+      color: #fff;
+      font-size: 19px;
     }
+
+    .footer-company p { margin: 3px 0; }
+    .footer-company a { color: #fff; }
+
+    .floating-contact {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 115;
+      display: flex;
+      box-shadow: 0 -2px 12px rgba(0,0,0,.13);
+    }
+
+    .floating-contact a {
+      flex: 1;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 10px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: filter .2s;
+    }
+
+    .floating-contact a:hover { filter: brightness(.92); }
+    .floating-consult { background: #a92320; }
+    .floating-line { background: #5bb85d; }
+    .floating-facebook { background: #3988cc; }
+
+    body { padding-bottom: 52px; }
 
     @media (max-width: 900px) {
       .header-inner {
@@ -492,6 +576,9 @@
       .header-actions a { padding: 7px 10px; font-size: 14px; }
 
       .hero img { aspect-ratio: 16 / 8; }
+      .footer-links { gap: 18px; }
+      .footer-column h2 { font-size: 20px; }
+      .footer-column li { padding: 8px; }
     }
 
     @media (max-width: 600px) {
@@ -569,33 +656,28 @@
         font-size: 12px;
       }
 
-      .mobile-bottom {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 110;
-        display: flex;
-        box-shadow: 0 -2px 12px rgba(0,0,0,.1);
+      .footer-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 30px 14px 34px;
+        gap: 20px 14px;
       }
 
-      .mobile-bottom a {
-        flex: 1;
-        padding: 12px 6px;
-        text-align: center;
-        color: #fff;
-        text-decoration: none;
-        font-size: 14px;
+      .footer-column h2 { font-size: 19px; }
+      .footer-column li { padding: 8px; font-size: 13px; }
+
+      .footer-company-inner { padding: 24px 16px 72px; }
+
+      .floating-contact a {
+        min-height: 48px;
+        padding: 10px 4px;
+        font-size: 13px;
       }
 
-      .mobile-bottom .consult { background: var(--red); }
-      .mobile-bottom .line { background: #16834a; }
-
-      body { padding-bottom: 46px; }
+      body { padding-bottom: 48px; }
 
       .back-to-top {
         right: 12px;
-        bottom: 60px;
+        bottom: 62px;
         width: 46px;
         height: 46px;
         font-size: 19px;

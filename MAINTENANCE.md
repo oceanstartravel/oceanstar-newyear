@@ -14,8 +14,10 @@
 - `[區塊 2]`：春節主視覺圖片與點擊後前往的網址。
 - `[區塊 3]`：專題介紹與國家快速選單。
 - `[區塊 4]`：國家分類與行程卡片。
-- `[區塊 5]`：LINE 客服區。
-- `[區塊 6]`：頁尾公司資訊。
+- `[區塊 5]`：行程內容下方的旅遊諮詢、LINE 客服與 Facebook 入口。
+- `[區塊 6]`：官網風格頁尾與公司資訊。
+- `.floating-contact`：桌機與手機都會固定顯示的三個聯絡按鈕。
+- `.back-to-top`：右下角藍色 TOP 浮標。
 
 ## 修改底色、字體、間距
 
@@ -32,7 +34,7 @@
 
 ## 聯絡入口
 
-頁首與頁尾的「旅遊諮詢」連結為 `https://www.oceanstar.com.tw/query.html`；「LINE 客服」連結為 `https://page.line.me/tje7738k?openQrModal=true`。手機版底部固定顯示兩個聯絡入口。
+頁首與頁尾的「旅遊諮詢」連結為 `https://www.oceanstar.com.tw/query.html`；「LINE 客服」連結為 `https://page.line.me/tje7738k?openQrModal=true`。頁面底部固定顯示三個聯絡入口：旅遊諮詢、LINE 客服與 Facebook 粉絲專頁。
 
 ## 新增或修改行程
 
@@ -44,6 +46,12 @@
 ## 新增國家選單時
 
 快速選單的 `href="#vietnam"` 必須與內容區塊的 `id="vietnam"` 完全一致。新增選單時，也要新增相同 ID 的內容區塊；否則選單會跳不到正確位置。
+
+## 頁尾與固定聯絡列
+
+- 頁尾參考官網樣式，包含資訊欄與深灰色公司資料區。
+- 固定聯絡列的 Facebook 連結為 `https://www.facebook.com/oceanstar16774819/`，直接前往新粉絲專頁，不使用 Messenger 管理或登入網址。
+- 右下角藍色 TOP 浮標位於固定聯絡列上方，點擊可回到頁首。
 
 ## 發布方式
 

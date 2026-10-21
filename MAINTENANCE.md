@@ -14,7 +14,7 @@
 - `[區塊 2]`：春節主視覺圖片與點擊後前往的網址。
 - `[區塊 3]`：專題介紹與國家快速選單。
 - `[區塊 4]`：國家分類與行程卡片。
-- `[區塊 5]`：行程內容下方的旅遊諮詢、LINE 客服與 Facebook 入口。
+- `[區塊 5]`：2027 春節常見問題 Q&A；新增問題時複製一組 `<article class="faq-item">...</article>` 並修改問答文字。
 - `[區塊 6]`：官網風格頁尾與公司資訊。
 - `.floating-contact`：桌機與手機都會固定顯示的三個聯絡按鈕。
 - `.back-to-top`：右下角藍色 TOP 浮標使用 CSS 繪製屋頂形向上尖角（不使用文字 ↑ 符號）。
@@ -34,7 +34,13 @@
 
 ## 聯絡入口
 
-頁首與頁尾的「旅遊諮詢」連結為 `https://www.oceanstar.com.tw/query.html`；「LINE 客服」連結為 `https://page.line.me/tje7738k?openQrModal=true`。頁面底部固定顯示三個聯絡入口：旅遊諮詢、LINE 客服與 Facebook 粉絲專頁。
+頁首的「旅遊諮詢」連結為 `https://www.oceanstar.com.tw/query.html`；「LINE 客服」連結為 `https://page.line.me/tje7738k?openQrModal=true`。頁面底部固定顯示三個聯絡入口：旅遊諮詢、LINE 客服與 Facebook 粉絲專頁。行程列表後的重複藍色漸層聯絡區已移除。
+
+## 新增或修改 Q&A
+
+1. 在 `index.html` 搜尋 `[區塊 5]`。
+2. 複製一組 `<article class="faq-item">...</article>`。
+3. 修改問題標題與答案文字；保持 Q.、A. 標記即可。
 
 ## 新增或修改行程
 

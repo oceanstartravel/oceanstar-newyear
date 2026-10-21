@@ -374,53 +374,59 @@
       font-size: 14px;
     }
 
-    .contact-banner {
-      padding: 32px 20px;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(120deg, #145a91, #237caf);
+    /* 春節 Q&A：沿用簡潔的問答版型，方便日後複製 faq-item 擴充 */
+    .faq-section {
+      padding: 52px 20px 58px;
+      background: #f6eddd;
     }
 
-    .contact-banner h2 {
-      margin: 0 0 7px;
-      font-size: 25px;
+    .faq-inner {
+      max-width: 980px;
+      margin: 0 auto;
     }
 
-    .contact-banner p { margin: 0 0 18px; }
+    .faq-section h2 {
+      margin: 0 0 16px;
+      color: #f06422;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 500;
+      line-height: 1.4;
+    }
 
-    .contact-banner a {
-      display: inline-block;
-      padding: 10px 25px;
-      color: #145a91;
+    .faq-list {
+      margin-left: 34px;
       background: #fff;
-      border-radius: 999px;
+      border-left: 2px solid #f06422;
+    }
+
+    .faq-item {
+      padding: 10px 17px 12px;
+      border-bottom: 1px solid #e9e9e9;
+    }
+
+    .faq-item:last-child { border-bottom: 0; }
+
+    .faq-item h3 {
+      margin: 0 0 12px;
+      color: #525b65;
+      font-size: 17px;
       font-weight: 700;
-      text-decoration: none;
+      line-height: 1.6;
     }
 
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
+    .faq-item p {
+      margin: 0;
+      color: #66717c;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
-    .contact-banner .contact-actions a {
-      min-width: 140px;
-      padding: 11px 24px;
-      border-radius: 5px;
-    }
-
-    .contact-banner .contact-consult {
-      color: var(--red);
-      background: #fff;
-      border: 1px solid #fff;
-    }
-
-    .contact-banner .contact-line {
-      color: #fff;
-      background: #16834a;
-      border: 1px solid #16834a;
+    .faq-item h3 span,
+    .faq-item p span {
+      display: inline-block;
+      margin-right: 8px;
+      color: #f06422;
+      font-weight: 800;
     }
 
     .back-to-top {
@@ -646,9 +652,11 @@
 
       .back-to-top .top-label { font-size: 8px; }
 
-      .contact-banner { padding: 28px 16px; }
-      .contact-banner h2 { font-size: 22px; }
-      .contact-banner .contact-actions a { min-width: 128px; }
+      .faq-section { padding: 34px 16px 40px; }
+      .faq-list { margin-left: 10px; }
+      .faq-item { padding: 10px 12px 12px; }
+      .faq-item h3 { font-size: 16px; }
+      .faq-item p { font-size: 15px; }
     }
 
     @media (prefers-reduced-motion: reduce) {

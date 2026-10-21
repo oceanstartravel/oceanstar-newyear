@@ -68,6 +68,22 @@
       gap: 24px;
     }
 
+    .header-topic {
+      color: var(--red);
+      font-size: clamp(22px, 2.4vw, 34px);
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .header-topic:hover,
+    .header-topic:focus-visible {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
     .brand {
       display: flex;
       align-items: center;
@@ -380,35 +396,34 @@
 
     @media (max-width: 900px) {
       .header-inner {
-        min-height: auto;
-        padding: 10px 14px;
-        flex-direction: column;
-        gap: 8px;
+        min-height: 66px;
+        padding: 8px 14px;
+        flex-direction: row;
+        gap: 12px;
       }
 
       .brand img { width: 190px; }
 
-      .nav {
-        justify-content: center;
-        gap: 3px;
-      }
-
-      .nav a {
-        padding: 6px 8px;
-        font-size: 13px;
+      .header-topic {
+        font-size: clamp(18px, 3.2vw, 27px);
+        letter-spacing: 0;
       }
 
       .hero img { aspect-ratio: 16 / 8; }
     }
 
     @media (max-width: 600px) {
-      html { scroll-padding-top: 145px; }
+      html { scroll-padding-top: 80px; }
 
-      .nav { gap: 2px; }
+      .header-inner {
+        padding: 8px 10px;
+        gap: 8px;
+      }
 
-      .nav a {
-        padding: 5px 6px;
-        font-size: 12px;
+      .brand img { width: min(46vw, 170px); }
+
+      .header-topic {
+        font-size: clamp(16px, 4.2vw, 22px);
       }
 
       .hero img { aspect-ratio: 4 / 3; }
@@ -502,48 +517,24 @@
          aria-label="春暉旅行社官網首頁">
         <img
           src="https://ittms-img.ittms.com.tw/Images/C000785/BranchImg/37/20222521B4Mp8XKBSG071248.jpg"
-          alt="春暉旅行社 海洋之星假期"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <span style="display:none;color:#145a91;font-weight:700">
-          春暉旅行社｜海洋之星假期
-        </span>
+          alt="春暉旅行社 海洋之星假期">
       </a>
 
-      <nav class="nav" aria-label="主要導覽">
-        <a class="nav-highlight" href="#spring-trips">春節旅遊</a>
-        <a href="https://www.oceanstar.com.tw/">主題館</a>
-        <a href="https://www.oceanstar.com.tw/">海島旅遊</a>
-        <a href="https://www.oceanstar.com.tw/">東南亞</a>
-        <a href="https://www.oceanstar.com.tw/">東北亞</a>
-        <a href="https://www.oceanstar.com.tw/">紐澳美加</a>
-        <a href="https://www.oceanstar.com.tw/">歐洲</a>
-        <a href="https://www.oceanstar.com.tw/">基隆港郵輪</a>
-        <a href="https://www.oceanstar.com.tw/">會員專區</a>
-        <a href="https://www.oceanstar.com.tw/">旅遊諮詢</a>
-        <a href="https://lin.ee/kk0erol" target="_blank"
-           rel="noopener noreferrer">LINE客服</a>
-      </nav>
+      <a class="header-topic"
+         href="https://oceanstartravel.github.io/oceanstar-newyear/"
+         aria-label="回到2027春節旅遊專頁">2027 春節旅遊</a>
     </div>
   </header>
 
   <section class="hero" aria-label="2027春節旅遊主視覺">
-    <a class="hero-link" href="#spring-trips"
-       aria-label="瀏覽2027春節旅遊行程">
-      <!--
-        正式上線前，請將公司核准的春節橫幅上傳至本專案，
-        並將下方 src 改成實際圖片路徑，例如 images/spring-2027.jpg。
-      -->
+    <a class="hero-link"
+       href="https://www.oceanstar.com.tw/travel_list.html?0///82///589/////////0///0///"
+       aria-label="前往春暉旅行社2027春節行程列表"
+       target="_blank" rel="noopener noreferrer">
       <img
-        src="images/spring-2027.jpg"
-        alt="春暉旅行社2027春節旅遊精選行程"
-        onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-
-      <div class="hero-placeholder" hidden>
-        <p class="eyebrow">SUNRISE EXPRESS TRAVEL SERVICE</p>
-        <h1>2027 春節旅遊</h1>
-        <p>新春出遊・精選泰國與越南假期</p>
-        <span class="hero-cta">探索春節精選行程 ↓</span>
-      </div>
+        src="https://images.ittms.tw/Images/C000785/advertise-banner/309/20260243bcGUxV6da6091132.jpg"
+        alt="春暉旅行社2027春節旅遊主視覺"
+        fetchpriority="high">
     </a>
   </section>
 

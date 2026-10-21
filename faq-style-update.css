@@ -1,0 +1,98 @@
+/* 春暉 2027 春節頁｜FAQ 視覺更新
+   請將本檔內容附加到 style.css 最底部。
+   只調整 FAQ 區塊，不影響行程、頁尾、固定聯絡列或 TOP 按鈕。 */
+
+.faq-section {
+  padding: 54px 24px 62px;
+  background: #f7eedc;
+}
+
+.faq-inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  margin: 0 0 16px;
+  color: #f06422;
+  font-size: clamp(25px, 2.7vw, 32px);
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.faq-list {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  border-left: 2px solid #f06422;
+  border-radius: 0 2px 2px 0;
+}
+
+.faq-item {
+  padding: 14px 18px 15px;
+  border-bottom: 1px solid #ece7df;
+  background: #fff;
+}
+
+.faq-item:last-child {
+  border-bottom: 0;
+}
+
+.faq-item h3 {
+  margin: 0 0 12px;
+  color: #555d66;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #68717b;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.faq-item h3 span {
+  color: #f06422;
+  font-weight: 800;
+}
+
+.faq-item p span {
+  color: #8a929a;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .faq-section {
+    padding: 36px 16px 42px;
+  }
+
+  .faq-section h2 {
+    margin-bottom: 16px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .faq-list {
+    max-width: 100%;
+  }
+
+  .faq-item {
+    padding: 13px 14px 14px;
+  }
+
+  .faq-item h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .faq-item p {
+    font-size: 15px;
+  }
+}

@@ -10,7 +10,7 @@
 
 在 `index.html` 使用 Ctrl+F 搜尋以下註解：
 
-- `[區塊 1]`：頁首 Logo 與「2027 春節旅遊」標題。
+- `[區塊 1]`：頁首 Logo 與「2027 春節旅遊精選」標題與旅遊諮詢／LINE 客服按鈕。
 - `[區塊 2]`：春節主視覺圖片與點擊後前往的網址。
 - `[區塊 3]`：專題介紹與國家快速選單。
 - `[區塊 4]`：國家分類與行程卡片。
@@ -22,13 +22,17 @@
 請開啟 `style.css`，使用 Ctrl+F 搜尋 CSS 類別名稱，例如：
 
 - `.site-header`：頁首整條 BAR 的底色與邊框。
-- `.header-topic`：頁首「2027 春節旅遊」標題樣式。
+- `.header-topic`：頁首「2027 春節旅遊精選」標題與旅遊諮詢／LINE 客服按鈕樣式。
 - `.hero`、`.hero img`：主視覺區域與圖片顯示方式。
 - `.intro`：主視覺下方的專題介紹區塊。
 - `.quick-nav`：國家快速選單。
 - `.country-heading`：國家標題色帶。
 - `.trip-card`：行程卡片外觀。
 - `@media`：手機版與較小螢幕的版面規則。
+
+## 聯絡入口
+
+頁首與頁尾的「旅遊諮詢」連結為 `https://www.oceanstar.com.tw/query.html`；「LINE 客服」連結為 `https://page.line.me/tje7738k?openQrModal=true`。手機版底部固定顯示兩個聯絡入口。
 
 ## 新增或修改行程
 

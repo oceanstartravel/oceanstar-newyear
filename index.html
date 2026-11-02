@@ -115,13 +115,13 @@
       6. 沒有任何可顯示行程的目的地與國家會自動隱藏。
     */
     const countryConfig = [
-      { id: "thailand", name: "泰國", english: "Thailand", tagline: "陽光海島・悠閒度假", order: 1 },
-      { id: "vietnam", name: "越南", english: "Vietnam", tagline: "山海奇景・文化古都", order: 2 },
-      { id: "korea", name: "韓國", english: "Korea", tagline: "城市風景・四季旅遊", order: 3 },
-      { id: "philippines", name: "菲律賓", english: "Philippines", tagline: "海島風光・水上體驗", order: 4 },
-      { id: "malaysia", name: "馬來西亞", english: "Malaysia", tagline: "多元文化・熱帶假期", order: 5 },
-      { id: "guam", name: "關島", english: "Guam", tagline: "陽光海灘・悠閒度假", order: 6 },
-      { id: "europe", name: "歐洲", english: "Europe", tagline: "經典城市・人文風景", order: 7 }
+      { id: "thailand", name: "泰國", english: "Thailand", order: 1 },
+      { id: "vietnam", name: "越南", english: "Vietnam", order: 2 },
+      { id: "korea", name: "韓國", english: "Korea", order: 3 },
+      { id: "philippines", name: "菲律賓", english: "Philippines", order: 4 },
+      { id: "malaysia", name: "馬來西亞", english: "Malaysia", order: 5 },
+      { id: "guam", name: "關島", english: "Guam", order: 6 },
+      { id: "europe", name: "歐洲", english: "Europe", order: 7 }
     ];
 
     const destinationConfig = [
@@ -217,7 +217,6 @@
       <section class="country-section" id="${escapeHtml(country.id)}">
         <h2 class="country-heading">
           ${escapeHtml(country.name)} ${escapeHtml(country.english)}
-          <small>${escapeHtml(country.tagline)}</small>
         </h2>
         ${country.destinations.map(destination => `
           <section class="destination" id="${escapeHtml(destination.id)}">

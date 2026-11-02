@@ -289,7 +289,7 @@
                         <span class="trip-title-segment trip-title-${escapeHtml(segment.style)}">${escapeHtml(segment.text)}</span>
                       `).join("")}
                     </div>
-                    <div class="trip-date"><span class="trip-date-bullet" aria-hidden="true">●</span> 春節：${trip.date ? escapeHtml(trip.date.replace(/(\\d+)\\/(\\d+)/g, "$1月$2日")) : ""}${trip.dateTags && trip.dateTags.length ? '<span class="trip-date-tag">（' + escapeHtml(trip.dateTags[0]) + '）</span>' : ""}</div>
+                    <div class="trip-date"><span class="trip-date-bullet" aria-hidden="true">●</span> 春節：${trip.date ? escapeHtml(trip.date.replace(/(\d+)\/(\d+)/g, "$1月$2日")) : ""}${trip.dateTags && trip.dateTags.length ? '<span class="trip-date-tag">（' + escapeHtml(trip.dateTags[0]) + '）</span>' : ""}</div>
                   </div>
                   <div class="trip-card-aside">
                     ${(trip.discountTags || []).length ? '<div class="trip-discount-tags">' + trip.discountTags.map(tag => '<span class="trip-discount-tag">' + escapeHtml(tag) + '</span>').join("") + '</div>' : ""}

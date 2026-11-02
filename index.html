@@ -65,134 +65,162 @@
     </a>
   </section>
 
-  <!-- [區塊 3] 專題介紹與國家快速選單 -->
+  <!-- [區塊 3] 專題介紹與國家快速選單：依可顯示行程自動產生 -->
   <section class="intro" id="spring-trips">
     <div class="eyebrow">2027 LUNAR NEW YEAR HOLIDAYS</div>
     <h2>2027 春節旅遊精選</h2>
     <p>
-      新的一年，安排一趟期待已久的旅行。</br>
-      春暉精選人氣目的地，邀請您一起迎接新春假期。</br>
-      出發日期、團費及團位請以正式行程頁面公告為準。</br>
+      新的一年，安排一趟期待已久的旅行。<br>
+      春暉精選人氣目的地，邀請您一起迎接新春假期。<br>
+      出發日期、團費及團位請以正式行程頁面公告為準。
     </p>
-
-    <nav class="quick-nav" aria-label="春節國家與地區快速選單">
-      <a href="#thailand">泰國</a>
-      <a href="#philippines">菲律賓</a>
-      <a href="#vietnam">越南</a>
-      <a href="#malaysia">馬來西亞</a>
-      <a href="#guam">關島</a>
-      <a href="#europe">歐洲</a>
-    </nav>
+    <nav class="quick-nav" id="country-quick-nav" aria-label="春節國家與地區快速選單"></nav>
   </section>
 
-  <!-- [區塊 4] 國家與行程內容：新增／修改行程主要在此區 -->
-  <main>
-    <section class="country-section" id="thailand">
-      <h2 class="country-heading">
-        泰國 Thailand
-        <small>陽光海島・悠閒度假</small>
-      </h2>
+  <!-- [區塊 4] 國家分類與行程卡片：資料集中管理，排序 0 代表隱藏 -->
+  <main id="country-trip-list"></main>
 
-      <section class="destination" id="samui">
-        <h3 class="destination-heading">蘇梅島 Koh Samui</h3>
-        <div class="trip-list">
-          <article class="trip-card">
-            <div class="trip-info">
-              <h4 class="trip-title">
-                <a href="https://www.oceanstar.com.tw/travel_list.html?0///82///589/////////0///0///">
-                  2027 春節蘇梅島精選行程
+  <script>
+    /*
+      維護方式：
+      1. countryOrder：國家排序，數字越小越前面；0 隱藏。
+      2. destinationOrder：同一國家內的目的地排序；0 隱藏。
+      3. tripOrder：單一行程排序；0 暫時隱藏。
+      4. titleSegments：依實際排版需要自行分段，系統不刪字、不截斷。
+      5. price、discount 尚未填寫時不顯示，不會自行產生價格或優惠。
+      6. 沒有任何可顯示行程的目的地與國家會自動隱藏。
+    */
+    const countryConfig = [
+      { id: "thailand", name: "泰國", english: "Thailand", tagline: "陽光海島・悠閒度假", order: 1 },
+      { id: "vietnam", name: "越南", english: "Vietnam", tagline: "山海奇景・文化古都", order: 2 },
+      { id: "korea", name: "韓國", english: "Korea", tagline: "城市風景・四季旅遊", order: 3 },
+      { id: "philippines", name: "菲律賓", english: "Philippines", tagline: "海島風光・水上體驗", order: 4 },
+      { id: "malaysia", name: "馬來西亞", english: "Malaysia", tagline: "多元文化・熱帶假期", order: 5 },
+      { id: "guam", name: "關島", english: "Guam", tagline: "陽光海灘・悠閒度假", order: 6 },
+      { id: "europe", name: "歐洲", english: "Europe", tagline: "經典城市・人文風景", order: 7 }
+    ];
+
+    const destinationConfig = [
+      { id: "samui", countryId: "thailand", name: "蘇梅島 Koh Samui", order: 1 },
+      { id: "phuket", countryId: "thailand", name: "普吉島 Phuket", order: 2 },
+      { id: "similan", countryId: "thailand", name: "斯米蘭 Similan", order: 3 },
+      { id: "north-vietnam", countryId: "vietnam", name: "北越 Northern Vietnam", order: 1 },
+      { id: "central-vietnam", countryId: "vietnam", name: "中越 Central Vietnam", order: 2 },
+      { id: "phu-quoc", countryId: "vietnam", name: "富國島 Phu Quoc", order: 3 }
+    ];
+
+    const tripData = [
+      {
+        id: "samui-a", destinationId: "samui", order: 1,
+        titleSegments: [
+          { text: "《2027春節限定包機．極境蘇梅島輕奢 5 日》五星度假村 Nora Buri Resort & Spa", style: "main" },
+          { text: "(Deluxe Hillside)", style: "sub" }
+        ],
+        date: "2月6日（初一）",
+        price: "",
+        discount: "",
+        url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206A"
+      },
+      {
+        id: "samui-b", destinationId: "samui", order: 2,
+        titleSegments: [
+          { text: "《2027春節限定包機．極境蘇梅島奢旅 5 日》五星獨棟海景泳池別墅", style: "main" },
+          { text: "Nora Buri Resort (Pool Villa Hillside Seaview)", style: "sub" }
+        ],
+        date: "2月6日（初一）",
+        price: "",
+        discount: "",
+        url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206B"
+      },
+      {
+        id: "samui-c", destinationId: "samui", order: 3,
+        titleSegments: [
+          { text: "《2027春節限定包機．極境蘇梅島奢旅 5 日》五星獨棟海濱泳池別墅", style: "main" },
+          { text: "Nora Buri Resort (Pool Villa Beachside)", style: "sub" }
+        ],
+        date: "2月6日（初一）",
+        price: "",
+        discount: "",
+        url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206C"
+      },
+      {
+        id: "similan-s", destinationId: "similan", order: 1,
+        titleSegments: [
+          { text: "【2027春節獨家．泰國斯米蘭國家公園夢幻藍5日】", style: "main" },
+          { text: "巴地哇激流峽谷泛舟︱叢林越野 ATV︱象徑叢林漫步︱黃金象神洞地底河流秘境", style: "feature" },
+          { text: "Bay View Cafe 海景微醺午茶︱五星渡假村︱無購物", style: "feature" }
+        ],
+        date: "2月6日（初一）",
+        price: "",
+        discount: "",
+        url: "https://www.oceanstar.com.tw/travel_content.html?HKT05SL270206S"
+      }
+    ];
+
+    const countryQuickNav = document.getElementById("country-quick-nav");
+    const countryTripList = document.getElementById("country-trip-list");
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[char]);
+    }
+
+    function visibleTripsFor(destinationId) {
+      return tripData
+        .filter(trip => trip.destinationId === destinationId && Number(trip.order) > 0)
+        .sort((a, b) => Number(a.order) - Number(b.order));
+    }
+
+    const visibleCountries = countryConfig
+      .filter(country => Number(country.order) > 0)
+      .map(country => {
+        const destinations = destinationConfig
+          .filter(destination => destination.countryId === country.id && Number(destination.order) > 0)
+          .map(destination => ({ ...destination, trips: visibleTripsFor(destination.id) }))
+          .filter(destination => destination.trips.length > 0)
+          .sort((a, b) => Number(a.order) - Number(b.order));
+        return { ...country, destinations };
+      })
+      .filter(country => country.destinations.length > 0)
+      .sort((a, b) => Number(a.order) - Number(b.order));
+
+    countryQuickNav.innerHTML = visibleCountries.map(country =>
+      '<a href="#' + escapeHtml(country.id) + '">' + escapeHtml(country.name) + '</a>'
+    ).join("");
+
+    countryTripList.innerHTML = visibleCountries.map(country => `
+      <section class="country-section" id="${escapeHtml(country.id)}">
+        <h2 class="country-heading">
+          ${escapeHtml(country.name)} ${escapeHtml(country.english)}
+          <small>${escapeHtml(country.tagline)}</small>
+        </h2>
+        ${country.destinations.map(destination => `
+          <section class="destination" id="${escapeHtml(destination.id)}">
+            <h3 class="destination-heading">${escapeHtml(destination.name)}</h3>
+            <div class="trip-list">
+              ${destination.trips.map(trip => `
+                <a class="trip-card" href="${escapeHtml(trip.url)}" target="_blank" rel="noopener noreferrer">
+                  <div class="trip-card-main">
+                    <div class="trip-title">
+                      ${trip.titleSegments.map(segment => `
+                        <span class="trip-title-segment trip-title-${escapeHtml(segment.style)}">${escapeHtml(segment.text)}</span>
+                      `).join("")}
+                    </div>
+                    <div class="trip-date">${trip.date ? "› 春節：" + escapeHtml(trip.date) : ""}</div>
+                  </div>
+                  <div class="trip-card-aside">
+                    ${trip.discount ? '<span class="trip-discount">' + escapeHtml(trip.discount) + '</span>' : ""}
+                    ${trip.price ? '<span class="trip-price">' + escapeHtml(trip.price) + '</span>' : ""}
+                  </div>
                 </a>
-              </h4>
-              <p class="trip-meta">春節出發｜詳細日期、團費及內容請見官網</p>
+              `).join("")}
             </div>
-            <a class="trip-link"
-               href="https://www.oceanstar.com.tw/travel_list.html?0///82///589/////////0///0///">
-              查看行程
-            </a>
-          </article>
-        </div>
+          </section>
+        `).join("")}
       </section>
-
-      <section class="destination" id="phuket">
-        <h3 class="destination-heading">普吉島 Phuket</h3>
-        <div class="trip-list">
-          <article class="trip-card">
-            <div class="trip-info">
-              <h4 class="trip-title">2027 春節普吉島精選行程</h4>
-              <p class="trip-meta">春節出發｜正式行程連結待確認</p>
-            </div>
-            <span class="trip-link" aria-label="行程連結尚待設定">連結待補</span>
-          </article>
-        </div>
-      </section>
-    </section>
-
-    <section class="country-section" id="vietnam">
-      <h2 class="country-heading">
-        越南 Vietnam
-        <small>山海奇景・文化古都</small>
-      </h2>
-
-      <section class="destination" id="north-vietnam">
-        <h3 class="destination-heading">北越 Northern Vietnam</h3>
-        <div class="trip-list">
-          <article class="trip-card">
-            <div class="trip-info">
-              <h4 class="trip-title">2027 春節北越精選行程</h4>
-              <p class="trip-meta">下龍灣・河內・沙壩｜正式行程連結待確認</p>
-            </div>
-            <span class="trip-link">連結待補</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="destination" id="central-vietnam">
-        <h3 class="destination-heading">中越 Central Vietnam</h3>
-        <div class="trip-list">
-          <article class="trip-card">
-            <div class="trip-info">
-              <h4 class="trip-title">2027 春節中越精選行程</h4>
-              <p class="trip-meta">正式出發日期及行程連結待確認</p>
-            </div>
-            <span class="trip-link">連結待補</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="destination" id="phu-quoc">
-        <h3 class="destination-heading">富國島 Phu Quoc</h3>
-        <div class="trip-list">
-          <article class="trip-card">
-            <div class="trip-info">
-              <h4 class="trip-title">2027 春節富國島精選行程</h4>
-              <p class="trip-meta">海島度假｜正式行程連結待確認</p>
-            </div>
-            <span class="trip-link">連結待補</span>
-          </article>
-        </div>
-      </section>
-    </section>
-
-    <section class="country-section" id="philippines">
-      <h2 class="country-heading">菲律賓 Philippines <small>海島風光・水上體驗</small></h2>
-      <div class="empty-note">菲律賓春節行程將於正式產品確認後更新。</div>
-    </section>
-
-    <section class="country-section" id="malaysia">
-      <h2 class="country-heading">馬來西亞 Malaysia <small>多元文化・熱帶假期</small></h2>
-      <div class="empty-note">馬來西亞春節行程將於正式產品確認後更新。</div>
-    </section>
-
-    <section class="country-section" id="guam">
-      <h2 class="country-heading">關島 Guam <small>陽光海灘・悠閒度假</small></h2>
-      <div class="empty-note">關島春節行程將於正式產品確認後更新。</div>
-    </section>
-
-    <section class="country-section" id="europe">
-      <h2 class="country-heading">歐洲 Europe <small>經典城市・人文風景</small></h2>
-      <div class="empty-note">歐洲春節行程將於正式產品確認後更新。</div>
-    </section>
-  </main>
+    `).join("");
+  </script>
 
   <!-- [區塊 5] 春節常見問題 Q&A：可直接複製 question-item 新增問題 -->
   <section class="faq-section" id="faq" aria-labelledby="faq-title">

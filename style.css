@@ -1161,3 +1161,31 @@
     margin-left: auto;
   }
 }
+
+
+/* 出發日期參考黑皮假期：紅色圓點、春節標示與清楚字級 */
+.trip-card .trip-date {
+  color: #a92320;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.trip-card .trip-date-bullet {
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 10px;
+  vertical-align: 2px;
+}
+
+.trip-card .trip-date-tag {
+  margin-left: 3px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .trip-card .trip-date {
+    font-size: 15px;
+  }
+}

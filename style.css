@@ -1045,3 +1045,10 @@
   font-weight: inherit;
   line-height: inherit;
 }
+
+
+/* 日期括號分類文字縮小，日期本身維持原字級 */
+.trip-date-tag {
+  font-size: .75em;
+  font-weight: 500;
+}

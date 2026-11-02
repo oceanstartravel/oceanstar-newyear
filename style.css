@@ -1087,3 +1087,45 @@
     margin-left: auto;
   }
 }
+
+
+/* 優惠標籤列：每筆行程可自行增減 discountTags 內容 */
+.trip-discount-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.trip-discount-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: #a92320;
+  background: #fff3df;
+  border: 1px solid #e8c27e;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .trip-card .trip-card-aside {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .trip-discount-tags {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .trip-card .trip-price {
+    align-self: flex-end;
+    margin-left: auto;
+  }
+}

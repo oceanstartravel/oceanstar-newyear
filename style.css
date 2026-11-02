@@ -1189,3 +1189,197 @@
     font-size: 15px;
   }
 }
+
+
+/* ===== 手機版 RWD 精簡排版：桌機版維持原樣 ===== */
+@media (max-width: 700px) {
+  /* 頁首：縮成單列，避免與底部固定聯絡列重複 */
+  .header-inner {
+    min-height: 0;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .brand {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .brand img {
+    width: clamp(118px, 39vw, 154px);
+    max-width: 100%;
+  }
+
+  .header-topic {
+    flex: 0 0 auto;
+    margin: 0 0 0 auto;
+    font-size: clamp(16px, 4.5vw, 21px);
+    line-height: 1.25;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  /* 行程區：減少左右空白，讓卡片更有效利用手機寬度 */
+  main {
+    padding: 8px 12px 38px;
+  }
+
+  .country-section {
+    margin-top: 24px;
+  }
+
+  .destination {
+    margin-top: 19px;
+  }
+
+  .destination-heading {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .trip-list {
+    gap: 11px;
+  }
+
+  /* 卡片內容順序：標題／副標 → 日期 → 優惠與價格 */
+  .trip-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px 14px 13px;
+    border-radius: 6px;
+  }
+
+  .trip-card-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .trip-title {
+    gap: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+
+  .trip-title-main {
+    line-height: 1.5;
+  }
+
+  .trip-title-feature {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .trip-title-sub {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .trip-date {
+    margin-top: 1px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .trip-card-aside {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    justify-content: initial;
+    gap: 8px;
+    margin-top: 2px;
+    padding-top: 10px;
+    border-top: 1px solid #eee3d0;
+  }
+
+  .trip-discount-tags {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .trip-discount-tag {
+    max-width: 100%;
+    padding: 5px 7px;
+    font-size: 12px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .trip-card .trip-card-aside .trip-price {
+    min-width: 0;
+    min-height: 40px;
+    max-width: 100%;
+    margin: 0;
+    padding: 7px 9px;
+    gap: 2px;
+    font-size: 18px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .trip-card .trip-price .price-tax {
+    font-size: .48em;
+  }
+}
+
+/* 極窄手機：標題與價格再略縮，避免橫向擠壓 */
+@media (max-width: 380px) {
+  .header-inner {
+    padding-right: 11px;
+    padding-left: 11px;
+    gap: 7px;
+  }
+
+  .brand img {
+    width: 116px;
+  }
+
+  .header-topic {
+    font-size: 16px;
+  }
+
+  main {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .trip-card {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .trip-title {
+    font-size: 15px;
+  }
+
+  .trip-discount-tag {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+
+  .trip-card .trip-card-aside .trip-price {
+    padding-right: 7px;
+    padding-left: 7px;
+    font-size: 16px;
+  }
+}

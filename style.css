@@ -1052,3 +1052,38 @@
   font-size: .75em;
   font-weight: 500;
 }
+
+
+/* 早鳥優惠保留獨立顯示，與價格區分 */
+.trip-card .trip-discount {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  color: #a92320;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .trip-card .trip-card-aside {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px 12px;
+  }
+
+  .trip-card .trip-discount {
+    flex: 1 1 150px;
+    min-width: 0;
+  }
+
+  .trip-card .trip-price {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+}

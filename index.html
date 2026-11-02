@@ -117,7 +117,7 @@
           { text: "(Deluxe Hillside)", style: "sub" }
         ],
         date: "2月6日（初一）",
-        price: "56,900元（含稅）",
+        price: "56,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206A"
       },
       {
@@ -127,7 +127,7 @@
           { text: "Nora Buri Resort (Pool Villa Hillside Seaview)", style: "sub" }
         ],
         date: "2月6日（初一）",
-        price: "61,900元（含稅）",
+        price: "61,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206B"
       },
       {
@@ -137,7 +137,7 @@
           { text: "Nora Buri Resort (Pool Villa Beachside)", style: "sub" }
         ],
         date: "2月6日（初一）",
-        price: "63,900元（含稅）",
+        price: "63,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206C"
       },
       {
@@ -148,7 +148,7 @@
           { text: "Bay View Cafe 海景微醺午茶︱五星渡假村︱無購物", style: "feature" }
         ],
         date: "2月6日（初一）",
-        price: "56,900元（含稅）",
+        price: "56,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?HKT05SL270206S"
       }
     ];
@@ -206,7 +206,7 @@
                     <div class="trip-date">${trip.date ? "› 春節：" + escapeHtml(trip.date) : ""}</div>
                   </div>
                   <div class="trip-card-aside">
-                    ${trip.price ? '<span class="trip-price">' + escapeHtml(trip.price) + '</span>' : ""}
+                    ${trip.price ? '<span class="trip-price"><span class="price-amount">' + escapeHtml(trip.price) + '</span>' + (trip.taxLabel ? '<span class="price-tax">' + escapeHtml(trip.taxLabel) + '</span>' : "") + '</span>' : ""}
                   </div>
                 </a>
               `).join("")}

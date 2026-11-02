@@ -117,7 +117,7 @@
           { text: "(Deluxe Hillside)", style: "sub" }
         ],
         date: "2/6", dateTags: ["初一"],
-        discount: "早鳥優惠：第二人現折 $2,000",
+        discountTags: ["早鳥優惠：第二人現折 $2,000"],
         price: "56,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206A"
       },
@@ -128,7 +128,7 @@
           { text: "Nora Buri Resort (Pool Villa Hillside Seaview)", style: "sub" }
         ],
         date: "2/6", dateTags: ["初一"],
-        discount: "早鳥優惠：第二人現折 $3,000",
+        discountTags: ["早鳥優惠：第二人現折 $3,000"],
         price: "61,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206B"
       },
@@ -139,7 +139,7 @@
           { text: "Nora Buri Resort (Pool Villa Beachside)", style: "sub" }
         ],
         date: "2/6", dateTags: ["初一"],
-        discount: "早鳥優惠：第二人現折 $2,000",
+        discountTags: ["早鳥優惠：第二人現折 $2,000"],
         price: "63,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206C"
       },
@@ -151,7 +151,7 @@
           { text: "Bay View Cafe 海景微醺午茶︱五星渡假村︱無購物", style: "feature" }
         ],
         date: "2/6", dateTags: ["初一"],
-        discount: "早鳥優惠：第二人現折 $2,000",
+        discountTags: ["早鳥優惠：第二人現折 $2,000"],
         price: "56,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?HKT05SL270206S"
       }
@@ -210,7 +210,7 @@
                     <div class="trip-date">${trip.date ? escapeHtml(trip.date) : ""}${trip.dateTags && trip.dateTags.length ? '<span class="trip-date-tag">（' + escapeHtml(trip.dateTags[0]) + '）</span>' : ""}</div>
                   </div>
                   <div class="trip-card-aside">
-                    ${trip.discount ? '<span class="trip-discount">' + escapeHtml(trip.discount) + '</span>' : ""}
+                    ${(trip.discountTags || []).length ? '<div class="trip-discount-tags">' + trip.discountTags.map(tag => '<span class="trip-discount-tag">' + escapeHtml(tag) + '</span>').join("") + '</div>' : ""}
                     ${trip.price ? '<span class="trip-price"><span class="price-amount">' + escapeHtml(trip.price) + '</span>' + (trip.taxLabel ? '<span class="price-tax">' + escapeHtml(trip.taxLabel) + '</span>' : "") + '</span>' : ""}
                   </div>
                 </a>

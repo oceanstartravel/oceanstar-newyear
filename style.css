@@ -836,8 +836,8 @@
   min-width: 150px;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .trip-discount {
@@ -1061,7 +1061,7 @@
     min-width: 0;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 8px;
   }
 

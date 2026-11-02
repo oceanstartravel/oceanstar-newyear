@@ -869,43 +869,6 @@
   text-align: center;
 }
 
-@media (max-width: 700px) {
-  .trip-card {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    padding: 16px 15px;
-  }
-
-  .trip-card-main { gap: 10px; }
-  .trip-title { font-size: 15px; line-height: 1.7; }
-  .trip-title-feature { font-size: 14px; }
-  .trip-title-sub { font-size: 12px; }
-
-  .trip-card-aside {
-    min-width: 0;
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .trip-discount {
-    order: 0;
-    max-width: 100%;
-    text-align: left;
-  }
-
-  .trip-price {
-    min-width: 116px;
-    min-height: 48px;
-    margin-left: auto;
-    font-size: 20px;
-  }
-}
-
-
 /* 行程價格：金底紅字，價格文字可直接在 tripData.price 編輯 */
 .trip-price {
   display: inline-flex;
@@ -924,55 +887,6 @@
   text-align: center;
   white-space: normal;
 }
-
-@media (max-width: 700px) {
-  .trip-card {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
-    padding: 17px 16px;
-  }
-
-  .trip-card-main {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .trip-title {
-    gap: 5px;
-    font-size: 16px;
-    line-height: 1.65;
-  }
-
-  .trip-title-feature { font-size: 14px; line-height: 1.7; }
-  .trip-title-sub { font-size: 13px; line-height: 1.5; }
-
-  .trip-date {
-    margin-top: 2px;
-    font-size: 14px;
-  }
-
-  .trip-card-aside {
-    display: flex;
-    width: 100%;
-    min-width: 0;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 2px;
-  }
-
-  .trip-price {
-    min-width: 0;
-    min-height: 40px;
-    margin-left: auto;
-    padding: 7px 12px;
-    font-size: 19px;
-  }
-}
-
 
 /* 價格標籤：確保金底紅字；含稅字樣為金額字級的一半 */
 .trip-card .trip-card-aside .trip-price {
@@ -1006,16 +920,6 @@
   font-weight: 700;
 }
 
-@media (max-width: 700px) {
-  .trip-card .trip-card-aside .trip-price {
-    min-width: 0;
-    min-height: 40px;
-    padding: 7px 12px;
-    font-size: 19px;
-  }
-}
-
-
 /* 春節出發日期後方的分類標籤，例如：早鳥團、除夕、初一 */
 .trip-date-tag {
   display: inline-block;
@@ -1031,7 +935,6 @@
   white-space: nowrap;
 }
 
-
 /* 日期分類標籤改為純文字，不使用底色或外框 */
 .trip-date-tag {
   display: inline;
@@ -1046,13 +949,11 @@
   line-height: inherit;
 }
 
-
 /* 日期括號分類文字縮小，日期本身維持原字級 */
 .trip-date-tag {
   font-size: .75em;
   font-weight: 500;
 }
-
 
 /* 早鳥優惠保留獨立顯示，與價格區分 */
 .trip-card .trip-discount {
@@ -1068,26 +969,6 @@
   line-height: 1.5;
   text-align: left;
 }
-
-@media (max-width: 700px) {
-  .trip-card .trip-card-aside {
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 9px 12px;
-  }
-
-  .trip-card .trip-discount {
-    flex: 1 1 150px;
-    min-width: 0;
-  }
-
-  .trip-card .trip-price {
-    flex: 0 0 auto;
-    margin-left: auto;
-  }
-}
-
 
 /* 優惠標籤列：每筆行程可自行增減 discountTags 內容 */
 .trip-discount-tags {
@@ -1112,56 +993,7 @@
   line-height: 1.4;
 }
 
-@media (max-width: 700px) {
-  .trip-card .trip-card-aside {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .trip-discount-tags {
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .trip-card .trip-price {
-    align-self: flex-end;
-    margin-left: auto;
-  }
-}
-
-
 /* 手機版優惠標籤靠卡片左下，價格維持右下 */
-@media (max-width: 700px) {
-  .trip-card .trip-card-aside {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .trip-card .trip-discount-tags {
-    flex: 1 1 auto;
-    min-width: 0;
-    justify-content: flex-start;
-    align-self: flex-end;
-  }
-
-  .trip-card .trip-discount-tag {
-    max-width: 100%;
-    white-space: normal;
-    text-align: left;
-  }
-
-  .trip-card .trip-price {
-    flex: 0 0 auto;
-    align-self: flex-end;
-    margin-left: auto;
-  }
-}
-
 
 /* 出發日期參考黑皮假期：紅色圓點、春節標示與清楚字級 */
 .trip-card .trip-date {
@@ -1184,55 +1016,12 @@
   font-weight: 600;
 }
 
-@media (max-width: 700px) {
-  .trip-card .trip-date {
-    font-size: 15px;
-  }
-}
-
 /* ===== 手機版：沿用桌機行程卡片配置，僅縮小尺寸 ===== */
+
+/* 窄螢幕再小幅縮放，不改變卡片資訊位置 */
+
+/* ===== 行程卡片 RWD：手機沿用桌機左右配置，等比例縮放 ===== */
 @media (max-width: 700px) {
-  /* 頁首維持精簡單列 */
-  .header-inner {
-    min-height: 0;
-    padding: 10px 14px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-
-  .brand img {
-    width: clamp(118px, 39vw, 154px);
-  }
-
-  .header-topic {
-    margin-left: auto;
-    font-size: clamp(16px, 4.5vw, 21px);
-    line-height: 1.25;
-    white-space: nowrap;
-  }
-
-  .header-actions {
-    display: none;
-  }
-
-  /* 行程卡片保留桌機版：左側標題日期、右側優惠價格 */
-  main {
-    padding: 8px 12px 38px;
-  }
-
-  .country-section {
-    margin-top: 24px;
-  }
-
-  .destination {
-    margin-top: 19px;
-  }
-
-  .trip-list {
-    gap: 11px;
-  }
-
   .trip-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(112px, 34%);
@@ -1262,7 +1051,7 @@
     line-height: 1.4;
   }
 
-  .trip-date {
+  .trip-card .trip-date {
     font-size: 13px;
     line-height: 1.4;
   }
@@ -1308,40 +1097,16 @@
   }
 }
 
-/* 窄螢幕再小幅縮放，不改變卡片資訊位置 */
+/* 窄螢幕只縮小間距與字級，維持左右欄位 */
 @media (max-width: 380px) {
-  .header-inner {
-    padding-right: 11px;
-    padding-left: 11px;
-    gap: 7px;
-  }
-
-  .brand img {
-    width: 116px;
-  }
-
-  .header-topic {
-    font-size: 16px;
-  }
-
-  main {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
   .trip-card {
     grid-template-columns: minmax(0, 1fr) minmax(104px, 35%);
     padding: 11px 10px;
     gap: 7px;
   }
 
-  .trip-title {
-    font-size: 13px;
-  }
-
-  .trip-title-feature {
-    font-size: 11px;
-  }
+  .trip-title { font-size: 13px; }
+  .trip-title-feature { font-size: 11px; }
 
   .trip-discount-tag {
     padding: 4px 5px;

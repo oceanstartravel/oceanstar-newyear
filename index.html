@@ -116,7 +116,7 @@
           { text: "《2027春節限定包機．極境蘇梅島輕奢 5 日》五星度假村 Nora Buri Resort & Spa", style: "main" },
           { text: "(Deluxe Hillside)", style: "sub" }
         ],
-        date: "2月6日", dateTags: ["初一"],
+        date: "2/6", dateTags: ["初一"],
         price: "56,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206A"
       },
@@ -126,7 +126,7 @@
           { text: "《2027春節限定包機．極境蘇梅島奢旅 5 日》五星獨棟海景泳池別墅", style: "main" },
           { text: "Nora Buri Resort (Pool Villa Hillside Seaview)", style: "sub" }
         ],
-        date: "2月6日", dateTags: ["初一"],
+        date: "2/6", dateTags: ["初一"],
         price: "61,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206B"
       },
@@ -136,7 +136,7 @@
           { text: "《2027春節限定包機．極境蘇梅島奢旅 5 日》五星獨棟海濱泳池別墅", style: "main" },
           { text: "Nora Buri Resort (Pool Villa Beachside)", style: "sub" }
         ],
-        date: "2月6日", dateTags: ["初一"],
+        date: "2/6", dateTags: ["初一"],
         price: "63,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206C"
       },
@@ -147,7 +147,7 @@
           { text: "巴地哇激流峽谷泛舟︱叢林越野 ATV︱象徑叢林漫步︱黃金象神洞地底河流秘境", style: "feature" },
           { text: "Bay View Cafe 海景微醺午茶︱五星渡假村︱無購物", style: "feature" }
         ],
-        date: "2月6日", dateTags: ["初一"],
+        date: "2/6", dateTags: ["初一"],
         price: "56,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?HKT05SL270206S"
       }
@@ -203,7 +203,7 @@
                         <span class="trip-title-segment trip-title-${escapeHtml(segment.style)}">${escapeHtml(segment.text)}</span>
                       `).join("")}
                     </div>
-                    <div class="trip-date">${trip.date ? "› 春節：" + escapeHtml(trip.date) : ""}${(trip.dateTags || []).map(tag => '<span class="trip-date-tag">（' + escapeHtml(tag) + '）</span>').join("")}</div>
+                    <div class="trip-date">${trip.date ? escapeHtml(trip.date) : ""}${trip.dateTags && trip.dateTags.length ? '<span class="trip-date-tag">（' + escapeHtml(trip.dateTags[0]) + '）</span>' : ""}</div>
                   </div>
                   <div class="trip-card-aside">
                     ${trip.price ? '<span class="trip-price"><span class="price-amount">' + escapeHtml(trip.price) + '</span>' + (trip.taxLabel ? '<span class="price-tax">' + escapeHtml(trip.taxLabel) + '</span>' : "") + '</span>' : ""}

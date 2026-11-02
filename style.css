@@ -1383,3 +1383,42 @@
     font-size: 16px;
   }
 }
+
+
+/* 修正手機版：優惠固定左側、價格固定右側 */
+@media (max-width: 700px) {
+  .trip-card .trip-card-aside {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    flex-direction: initial !important;
+    align-items: center !important;
+    justify-content: initial !important;
+    width: 100%;
+    gap: 8px 10px;
+  }
+
+  .trip-card .trip-discount-tags {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .trip-card .trip-discount-tag {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .trip-card .trip-card-aside .trip-price {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    margin: 0 !important;
+  }
+}

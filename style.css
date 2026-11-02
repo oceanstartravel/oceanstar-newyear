@@ -1030,3 +1030,18 @@
   line-height: 1.45;
   white-space: nowrap;
 }
+
+
+/* 日期分類標籤改為純文字，不使用底色或外框 */
+.trip-date-tag {
+  display: inline;
+  margin-left: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 1em;
+  font-weight: inherit;
+  line-height: inherit;
+}

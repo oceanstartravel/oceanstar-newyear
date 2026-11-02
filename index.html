@@ -132,7 +132,8 @@
       { id: "north-vietnam", countryId: "vietnam", name: "北越 Northern Vietnam", order: 1 },
       { id: "central-vietnam", countryId: "vietnam", name: "中越 Central Vietnam", order: 2 },
       { id: "phu-quoc", countryId: "vietnam", name: "富國島 Phu Quoc", order: 3 },
-      { id: "palawan", countryId: "philippines", name: "巴拉望 Palawan", order: 1 }
+      { id: "palawan", countryId: "philippines", name: "巴拉望 Palawan", order: 1 },
+      { id: "boracay", countryId: "philippines", name: "長灘島 Boracay", order: 2 }
     ];
 
     const tripData = [
@@ -168,6 +169,16 @@
         discountTags: ["早鳥優惠：第二人現折 $2,000"],
         price: "63,900元", taxLabel: "（含稅）",
         url: "https://www.oceanstar.com.tw/travel_content.html?USM05SL270206C"
+      },
+      {
+        id: "boracay-a", destinationId: "boracay", order: 1,
+        titleSegments: [
+          { text: "《2027春節賀歲．夢幻長灘島》跳島浮潛・嘟嘟車環島・五星海景下午茶・精油 SPA 5+1 日", style: "main" }
+        ],
+        date: "2/4、2/5", dateTags: [],
+        discountTags: ["限時下殺一口價"],
+        price: "36,900元",
+        url: "https://www.oceanstar.com.tw/travel_content.html?KLO055J270204A"
       },
       {
         id: "palawan-n1", destinationId: "palawan", order: 1,
@@ -278,7 +289,7 @@
                         <span class="trip-title-segment trip-title-${escapeHtml(segment.style)}">${escapeHtml(segment.text)}</span>
                       `).join("")}
                     </div>
-                    <div class="trip-date"><span class="trip-date-bullet" aria-hidden="true">●</span> 春節：${trip.date ? escapeHtml(trip.date.replace("/", "月") + "日") : ""}${trip.dateTags && trip.dateTags.length ? '<span class="trip-date-tag">（' + escapeHtml(trip.dateTags[0]) + '）</span>' : ""}</div>
+                    <div class="trip-date"><span class="trip-date-bullet" aria-hidden="true">●</span> 春節：${trip.date ? escapeHtml(trip.date.replace(/(\\d+)\\/(\\d+)/g, "$1月$2日")) : ""}${trip.dateTags && trip.dateTags.length ? '<span class="trip-date-tag">（' + escapeHtml(trip.dateTags[0]) + '）</span>' : ""}</div>
                   </div>
                   <div class="trip-card-aside">
                     ${(trip.discountTags || []).length ? '<div class="trip-discount-tags">' + trip.discountTags.map(tag => '<span class="trip-discount-tag">' + escapeHtml(tag) + '</span>').join("") + '</div>' : ""}

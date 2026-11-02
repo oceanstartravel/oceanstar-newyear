@@ -765,3 +765,142 @@
     font-size: 15px;
   }
 }
+
+
+/* ===== 區塊 3、4：資料化國家選單與春節行程卡片 ===== */
+.quick-nav:empty { display: none; }
+
+.trip-list {
+  display: grid;
+  gap: 14px;
+}
+
+.trip-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: 18px;
+  padding: 20px 22px;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #e0bd7e;
+  border-radius: 5px;
+  background: #fffdfa;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+
+.trip-card:hover,
+.trip-card:focus-visible {
+  color: inherit;
+  border-color: #c89a45;
+  box-shadow: 0 5px 18px rgba(92, 62, 22, .10);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.trip-card-main {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.trip-title {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  color: #35475a;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.trip-title-segment { display: block; }
+.trip-title-main { color: #35475a; }
+.trip-title-feature { color: #596777; font-size: 15px; font-weight: 500; }
+.trip-title-sub { color: #68788a; font-size: 13px; font-weight: 500; }
+
+.trip-date {
+  color: #a92320;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.trip-card-aside {
+  display: flex;
+  min-width: 150px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.trip-discount {
+  display: inline-block;
+  max-width: 220px;
+  padding: 6px 11px;
+  color: #a92320;
+  background: #fff0e5;
+  border: 1px solid #efc4a8;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.trip-price {
+  display: inline-flex;
+  min-width: 138px;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  color: #fff;
+  background: #145a91;
+  border-radius: 4px;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .trip-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px 15px;
+  }
+
+  .trip-card-main { gap: 10px; }
+  .trip-title { font-size: 15px; line-height: 1.7; }
+  .trip-title-feature { font-size: 14px; }
+  .trip-title-sub { font-size: 12px; }
+
+  .trip-card-aside {
+    min-width: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .trip-discount {
+    order: 0;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .trip-price {
+    min-width: 116px;
+    min-height: 48px;
+    margin-left: auto;
+    font-size: 20px;
+  }
+}

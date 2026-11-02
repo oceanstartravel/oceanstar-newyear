@@ -1129,3 +1129,35 @@
     margin-left: auto;
   }
 }
+
+
+/* 手機版優惠標籤靠卡片左下，價格維持右下 */
+@media (max-width: 700px) {
+  .trip-card .trip-card-aside {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .trip-card .trip-discount-tags {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-start;
+    align-self: flex-end;
+  }
+
+  .trip-card .trip-discount-tag {
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .trip-card .trip-price {
+    flex: 0 0 auto;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+}
